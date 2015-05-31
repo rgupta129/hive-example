@@ -1,2 +1,2 @@
 # hive-example
-Hive Examples usinh HQL
+Hive Examples using HQL
