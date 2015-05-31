@@ -1,0 +1,33 @@
+hive> desc sample_07;
+
+code                	string              	                    
+description         	string              	                    
+total_emp           	int                 	                    
+salary              	int                 	                    
+Time taken: 0.831 seconds, Fetched: 4 row(s)
+
+hive> select * from sample_07 limit 3;
+
+00-0000	All Occupations	134354250	40690
+11-0000	Management occupations	6003930	96150
+11-1011	Chief executives	299160	151370
+Time taken: 0.202 seconds, Fetched: 3 row(s)
+
+hive> select count(*) from sample_07;  
+
+823
+Time taken: 9.585 seconds, Fetched: 1 row(s)
+
+hive> select min(salary), max(salary), avg(salary) from sample_07 where salary is not null;
+
+16700	192780	47963.62637362637
+Time taken: 12.911 seconds, Fetched: 1 row(s)
+
+hive> select salary, case when salary > 100000 then "High" when salary > 70000 then "Medium" else "Low" end from sample_07 limit 5;      
+
+40690	Low
+96150	Medium
+151370	High
+103780	High
+33880	Low
+Time taken: 0.194 seconds, Fetched: 5 row(s)
